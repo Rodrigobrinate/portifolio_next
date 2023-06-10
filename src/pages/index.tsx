@@ -63,7 +63,7 @@ Neste portfólio, você encontrará alguns dos projetos que desenvolvi ao longo 
  <button>Download Curriculo</button>
  </Link>
  <br />
- <Link target='_blank' href="https://wa.me/28999190355">
+ <Link target='_blank' href="https://wa.me/5528999190355">
  <button>Entar em contato</button>
  </Link>
  </div>

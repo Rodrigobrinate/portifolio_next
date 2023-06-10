@@ -201,8 +201,7 @@ Em resumo, o projeto que desenvolvi é uma solução completa e profissional par
 </section>
 
 
-
-
+<br />
       </main>
     </>
   )

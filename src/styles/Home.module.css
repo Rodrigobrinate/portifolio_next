@@ -40,7 +40,9 @@
   margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
-  height: 100vh
+  height: auto !important;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
 

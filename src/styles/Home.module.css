@@ -6,12 +6,15 @@
 
 .header {
   display: flex; 
-  width: 70%;
+  width: 100%;
   justify-content: space-around;
   height: 80px;
   align-items: center;
-  background-color: #161F30;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
+  position: fixed;
+  top: 0;
+  z-index: 999;
    
   
 }
@@ -37,28 +40,46 @@
   margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
-  height: 50.5vh;
+  height: 100vh
 }
 
 
 .section1 h1{
 
   font-size: 4rem;
+  
  
 }
 
 .section1 h4{
   font-size: 3rem;
   margin-top: 10px;
+  margin-top: 40px;
 }
 
-
+.section1 div {
+  width: 70%;
+}
 .section1 span{
   display: flex;
   justify-content: space-between;
   margin-top: 10%
 }
 
+.section1  button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid #007A7A;
+  color: #007A7A;
+  background-color: #fff;
+  margin-top: 20px;
+}
+
+.section1 p {
+  color: #818181;
+  margin-top: 20px;
+  width: 70%;
+}
 
 
 .phrase {
@@ -73,6 +94,7 @@ display: flex;
 .phrase h1 {
   width: 70%;
   margin-left: 20%;
+  color: #000;
 }
 
 .phrase p {
@@ -211,7 +233,7 @@ font-size: 2rem;
   font-size: 1.4rem;
   border: 1px solid gray;
   border-radius: 30px;
-  color: #fff;
+  color: #000;
   font-weight: bold;
 }
 
@@ -237,7 +259,7 @@ font-size: 2rem;
 
   .section1{
     height: 90%;
-    border: 1px solid red;
+    
   }
   
   .section1 h1 {

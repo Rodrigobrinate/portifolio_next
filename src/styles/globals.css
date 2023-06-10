@@ -97,7 +97,9 @@ a {
 }
 
 section {
-  overflow: hidden;
+  overflow: hidden !important;
+  height: auto !important;
+  min-height: 100vh !important;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -5,6 +5,7 @@ import styles from '@/styles/Home.module.css'
 import { useEffect } from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Link from 'next/link'
 
 
 
@@ -37,12 +38,12 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <header className={styles.header}>
-        <h2><a href="/">Rodrigo Brinate Protazio</a></h2>
+        <h2><Link href="/">Rodrigo Brinate Protazio</Link></h2>
         <ul className={styles.headerList}>
-          <li><a href="#stacks">Stacks</a></li>
-          <li><a href="#sobre">Sobre min</a></li>
-          <li><a href="#curriculo">Currículo</a></li>
-          <li><a href="#project">Projetos</a></li>
+          <li><Link href="#stacks">Stacks</Link></li>
+          <li><Link href="#sobre">Sobre min</Link></li>
+          <li><Link href="#curriculo">Currículo</Link></li>
+          <li><Link href="#project">Projetos</Link></li>
         </ul>
         </header>
 
@@ -53,13 +54,13 @@ export default function Home() {
   
  <h4>Web Developer</h4>
  <p>Desenvolvedor full stack apaixonado por criar soluções digitais inovadoras. Confira meu portfólio e descubra o que posso fazer por você.</p>
- <a target='_blank' href="https://drive.google.com/file/d/16o8xfNPfUdJON73d2SXBampryNkTbj6N/view?usp=sharing">
+ <Link target='_blank' href="https://drive.google.com/file/d/16o8xfNPfUdJON73d2SXBampryNkTbj6N/view?usp=sharing">
  <button>Download Curriculo</button>
- </a>
+ </Link>
  <br />
- <a target='_blank' href="https://wa.me/28999190355">
+ <Link target='_blank' href="https://wa.me/28999190355">
  <button>Entar em contato</button>
- </a>
+ </Link>
  </div>
 
  <img src="./banner.png" width={'29%'} alt="foto de perfil" />
@@ -144,7 +145,9 @@ Neste portfólio, você encontrará alguns dos projetos que desenvolvi ao longo 
 <h1>Currículo</h1>
 <br />
 <br />
-<button>Currículo em pdf</button>
+<Link target='_blank' href="https://drive.google.com/file/d/16o8xfNPfUdJON73d2SXBampryNkTbj6N/view?usp=sharing">
+
+<button>Currículo em pdf</button></Link>
 
 </section >
 <section className={styles.section6} data-aos="zoom-in" id='project'  data-aos-duration="1000">

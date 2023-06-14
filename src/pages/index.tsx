@@ -75,7 +75,7 @@ export default function Home() {
               src="/banner.png"
               width={250}
               height={250}
-              quality={80}
+              quality={100}
               alt="ilustração de um programador"
             />
           </span>
@@ -92,14 +92,14 @@ export default function Home() {
           <br />
           <ul>
             <li>
-              <Image width={250} height={200} quality={80} src="/html.png" alt="html" />
+              <Image width={250} height={200} quality={100} src="/html.png" alt="html" />
               <p>
                 Concimentos e epeiências em HTML 5 para criação de sites
                 asscessíveis{" "}
               </p>
             </li>
             <li style={{ marginTop: "-80px" }}>
-              <Image width={200} height={200} quality={80} src="/css.png" alt="css" />
+              <Image width={200} height={200} quality={100} src="/css.png" alt="css" />
               <br />
               <br />
               <p style={{ marginTop: "-20px" }}>
@@ -108,7 +108,7 @@ export default function Home() {
               </p>
             </li>
             <li>
-              <Image width={120} height={120} quality={80} src="/js.png" alt="javascript" />
+              <Image width={120} height={120} quality={100} src="/js.png" alt="javascript" />
               <p>
                 Competencia na criação de sitemas e funcinalidades que facilitam
                 a vida do usuário
@@ -123,10 +123,10 @@ export default function Home() {
         >
           <ul>
             <li>
-              <Image width={230} height={200} quality={80} src="/react.png"  alt="reactJs" />
+              <Image width={230} height={200} quality={100} src="/react.png"  alt="reactJs" />
             </li>
             <li style={{ marginTop: "-80px" }}>
-              <Image width={330} height={280} quality={80}
+              <Image width={330} height={280} quality={100}
                 src="/node.png"
                 style={{
                   marginLeft: "auto",
@@ -138,7 +138,7 @@ export default function Home() {
               />
             </li>
             <li>
-              <Image width={230} height={200} quality={80} src="/nest.png"  alt="nestjs" />
+              <Image width={230} height={200} quality={100} src="/nest.png"  alt="nestjs" />
             </li>
           </ul>
         </section>
@@ -157,6 +157,7 @@ export default function Home() {
               src="/profile.png"
               width={100}
               height={100}
+              quality={100}
               style={{ borderRadius: "50%" }}
               alt=""
             />
@@ -302,6 +303,7 @@ export default function Home() {
             <Image
             width={500}
             height={400}
+            quality={100}
               src="/mapa-de-area.gif"
               alt="projeto mapeamento de técnicos por cidade"
             />

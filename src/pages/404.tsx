@@ -22,7 +22,14 @@ export default function Home() {
         <title>Rodrigo Brinate Protazio</title>
         <meta
           name="description"
-          content="Sou Rodrigo, um desenvolvedor de software com vasta experiência em resolver problemas complexos e entregar soluções de qualidade. Trabalho com PHP e JavaScript, além de ter um estilo de vida saudável e equilibrado. Busco constantemente aprimorar minhas habilidades e conhecimentos para criar soluções robustas e escaláveis. Valorizo o trabalho em equipe e a colaboração. Neste portfólio, você encontrará projetos que demonstram meu estilo de trabalho e habilidades"
+          content="Sou Rodrigo, um desenvolvedor de software com vasta experiência em resolver problemas complexos e entregar soluções de qualidade. 
+          Trabalho com PHP e JavaScript, além de ter um estilo de vida saudável e equilibrado. Busco constantemente aprimorar minhas habilidades e
+           conhecimentos para criar soluções robustas e escaláveis. Valorizo o trabalho em equipe e a colaboração. Neste portfólio, 
+           você encontrará projetos que demonstram meu estilo de trabalho e habilidades para			
+           sistema			
+           segurança			
+           usuários			
+           além"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/profile.ico" />

@@ -5,7 +5,14 @@ import { GoogleAnalytics } from "nextjs-google-analytics";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-        <meta name="keywords" content="Desenvolvedor Full Stack Node.js, Node.js, JavaScript, Desenvolvimento Web, Programação, Express.js, Banco de Dados, MongoDB, RESTful API, GraphQL, Front-end, React.js, Angular, Vue.js, HTML5, CSS3, Responsive Design, Testes Automatizados, Git, Versionamento de Código., para, sistema, segurança, usuários, além" />
+        <meta name="keywords" content="
+        Desenvolvedor Full Stack Node.js,
+         Node.js, JavaScript,
+          Desenvolvimento Web, Programação,
+           Express.js, Banco de Dados, MongoDB, RESTful API, GraphQL,
+            Front-end, React.js, Angular, Vue.js, HTML5, CSS3, Responsive Design,
+             Testes Automatizados, Git, Versionamento de Código., para, sistema,
+              segurança, usuários, além, programador" />
         <meta name="robots" content="index, follow" />
 
         {/* Meta tags para redes sociais (Open Graph) */}

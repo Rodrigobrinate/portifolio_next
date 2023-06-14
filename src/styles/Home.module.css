@@ -77,6 +77,8 @@
   margin-top: 20px;
 }
 
+
+
 .section1 p {
   color: #818181;
   margin-top: 20px;
@@ -189,6 +191,8 @@ max-width: 90%;
   margin-right: auto;
  }
 
+ 
+
 
 
  .section4 {
@@ -256,8 +260,19 @@ font-size: 2rem;
   display: block;
   margin-top: 20px;
 }
+ .section3 img{
+    width: 80%;
+    margin: 0;
+   }
+   .section2 img{
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+    align-self: center;
+   }
 
 @media screen and (max-width: 1000px) {
+ 
 
   .section1{
     height: 90%;
@@ -315,7 +330,7 @@ font-size: 2rem;
 
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 768px) {
 .section2 ul {
   display: block;
 

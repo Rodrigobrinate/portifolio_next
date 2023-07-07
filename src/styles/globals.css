@@ -79,6 +79,7 @@
   margin: 0;
 }
 
+
 html,
 body {
   max-width: 100vw;
@@ -116,4 +117,53 @@ section {
 
 .box.animate {
   opacity: 1;
+}
+
+
+.pointer:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  animation-duration: 200ms;
+  transition: 200ms ease-in-out;
+}
+
+.pointer {
+  transform: scale(1);
+  animation-duration: 200ms;
+  transition: 200ms ease-in-out;
+}
+
+
+
+.scale:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  animation-duration: 400ms;
+  transition: 400ms ease-in-out;
+}
+
+.scale {
+  transform: scale(1);
+  animation-duration: 400ms;
+  transition: 400ms ease-in-out;
+}
+
+.pulsar {
+  animation-name: teste;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+
+}
+
+
+@keyframes teste {
+  0% {
+     transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+ }
+ 100% {
+  transform: scale(1);
+}
 }

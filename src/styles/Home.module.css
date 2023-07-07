@@ -13,7 +13,7 @@
   background-color: #fff;
   color: #000;
   position: fixed;
-  top: 0;
+  top: -40px;
   z-index: 999;
    
   
@@ -80,7 +80,7 @@
 
 
 .section1 p {
-  color: #818181;
+  color: #4b4b4b;
   margin-top: 20px;
   width: 70%;
 }

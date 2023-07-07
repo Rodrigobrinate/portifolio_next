@@ -1,3 +1,4 @@
+'use client'
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
@@ -6,9 +7,53 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Link from "next/link";
+import Script from "next/script";
+import gsap from "gsap";
+import { useRef } from 'react';
+//var ScrollSmoother = require("gsap/dist/ScrollSmoother").ScrollSmoother;
+//import { ScrollSmoother } from 'gsap/dist/ScrollSmoother'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import { ScrollSmoother } from "gsap-trial/dist/ScrollSmoother";
+
+
+
+
 
 export default function Home() {
+  const projetcRef = useRef(null);
+  const stackRef = useRef(null);
+  const aboutRef = useRef(null);
+  const curriculoRef = useRef(null);
+
+  const tecRef = useRef(null);
+  const tecPulseRef = useRef(null);
+
+
   useEffect(() => {
+
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+    //ScrollTrigger.normalizeScroll(true)
+    ScrollSmoother.create({
+     
+        content: "#smooth-content",
+        wrapper: "#smooth-wrapper",
+        smooth: 1.5,
+        effects: true
+      
+    })
+    
+    setInterval(() => {
+      gsap.to(tecRef.current, {rotation: 360,scale: 1, x: 0, duration: 4});
+    
+      gsap.from(tecRef.current, {rotation: -360,scale: 1.2, x:  0, duration: 4});
+      gsap.from(tecRef.current, {rotation: -0,scale: 1, x:  0, duration: 4});
+
+    }, 4000)
+ 
+
+
+    
+
     AOS.init({
       duration: 1000,
       easing: "ease-in-out",
@@ -16,9 +61,45 @@ export default function Home() {
     });
   }, []);
 
+
+
+  function scrol(id: string, classe: string, ref: any){
+    let smoother = ScrollSmoother.create({
+      smooth: 2,
+      effects: true,
+      normalizeScroll: true
+    });
+    
+    // pin box-c when it reaches the center of the viewport, for 300px
+    // ScrollTrigger.create({
+    //   trigger: projetcRef.current,
+    //   pin: true,
+    //   start: "center center",
+    //   end: "+=200",
+    //  // markers: true
+    // });
+    
+    document?.querySelector("."+classe)?.addEventListener("click", e => {
+      // scroll to the spot where .box-c is in the center.
+      // parameters: element, smooth, position
+      //alert("teste")
+     // smoother.scrollTo(projetcRef.current, true, "center center");
+      
+      // or you could animate the scrollTop:
+      gsap.to(smoother, {
+      	scrollTop: smoother.offset(ref.current, "center center"),
+      	duration: 0.5
+      });
+    }) 
+  }
+
+
+
   return (
-    <>
+    <div  id="smooth-content">
       <Head>
+       
+
         <title>Rodrigo Brinate Protazio</title>
         <meta
           name="description"
@@ -36,22 +117,22 @@ export default function Home() {
         <link rel="icon" href="/profile.ico" />
       </Head>
       <main className={styles.main}>
-        <header className={styles.header}>
+        <header className={styles.header} >
           <h2>
             <Link href="/">Rodrigo Brinate Protazio</Link>
           </h2>
           <ul className={styles.headerList}>
             <li>
-              <Link href="#stacks">Stacks</Link>
+              <Link className="stacks" onClick={() => {scrol("stacks", "stacks", stackRef)}} href="">Stacks</Link>
             </li>
             <li>
-              <Link href="#sobre">Sobre min</Link>
+              <Link className="sobre" onClick={() => {scrol("sobre", "sobre", aboutRef)}} href="">Sobre min</Link>
             </li>
             <li>
-              <Link href="#curriculo">Currículo</Link>
+              <Link className="curriculo" onClick={() => {scrol("curriculo", "curriculo", curriculoRef)}} href="">Currículo</Link>
             </li>
             <li>
-              <Link href="#project">Projetos</Link>
+              <Link className="project" onClick={() => {scrol("project", "project", projetcRef)}} href="" >Projetos</Link>
             </li>
           </ul>
         </header>
@@ -71,11 +152,11 @@ export default function Home() {
                 target="_blank"
                 href="https://drive.google.com/file/d/16o8xfNPfUdJON73d2SXBampryNkTbj6N/view?usp=sharing"
               >
-                <button>Download Curriculo</button>
+                <button className="pointer">Download Curriculo</button>
               </Link>
               <br />
               <Link target="_blank" href="https://wa.me/5528999190355">
-                <button>Entar em contato</button>
+                <button className="pointer" >Entar em contato</button>
               </Link>
             </div>
 
@@ -90,6 +171,7 @@ export default function Home() {
         </section>
 
         <section
+        ref={stackRef}
           className={styles.section2}
           data-aos="zoom-in"
           id="stacks"
@@ -99,15 +181,15 @@ export default function Home() {
           <br />
           <br />
           <ul>
-            <li>
-              <Image width={250} height={200} quality={100} src="/html.png" alt="html" />
+            <li className="scale">
+              <Image className="pulsar" width={250} height={200} quality={100} src="/html.png" alt="html" />
               <p>
                 Concimentos e epeiências em HTML 5 para criação de sites
                 asscessíveis{" "}
               </p>
             </li>
-            <li style={{ marginTop: "-80px" }}>
-              <Image width={200} height={200} quality={100} src="/css.png" alt="css" />
+            <li className="scale" style={{ marginTop: "-80px" }}>
+              <Image className="pulsar" width={200} height={200} quality={100} src="/css.png" alt="css" />
               <br />
               <br />
               <p style={{ marginTop: "-20px" }}>
@@ -115,8 +197,8 @@ export default function Home() {
                 animados
               </p>
             </li>
-            <li>
-              <Image width={120} height={120} quality={100} src="/js.png" alt="javascript" />
+            <li className="scale" style={{width: "300px"}}>
+              <Image className="pulsar" width={220} height={220} quality={100} src="/js.png" alt="javascript" />
               <p>
                 Competencia na criação de sitemas e funcinalidades que facilitam
                 a vida do usuário
@@ -130,11 +212,11 @@ export default function Home() {
           data-aos-duration="1000"
         >
           <ul>
-            <li>
-              <Image width={230} height={200} quality={100} src="/react.png"  alt="reactJs" />
+            <li className="scale">
+              <Image className="pulsar" ref={tecRef} width={230} height={200} quality={100} src="/react.png"  alt="reactJs" />
             </li>
-            <li style={{ marginTop: "-80px" }}>
-              <Image width={330} height={280} quality={100}
+            <li className="scale" style={{ marginTop: "-80px" }}>
+              <Image className="pulsar" width={330} height={280} quality={100}
                 src="/node.png"
                 style={{
                   marginLeft: "auto",
@@ -145,13 +227,14 @@ export default function Home() {
                 alt="nodejs"
               />
             </li>
-            <li>
-              <Image width={230} height={200} quality={100} src="/nest.png"  alt="nestjs" />
+            <li className="scale">
+              <Image className="pulsar" width={230} height={200} quality={100} src="/nest.png"  alt="nestjs" />
             </li>
           </ul>
         </section>
 
         <section
+        ref={aboutRef}
           className={styles.section4}
           data-aos="zoom-in"
           id="sobre"
@@ -209,6 +292,7 @@ export default function Home() {
         <br />
         <br />
         <section
+        ref={curriculoRef}
           className={styles.section5}
           data-aos="zoom-in"
           id="curriculo"
@@ -225,6 +309,7 @@ export default function Home() {
           </Link>
         </section>
         <section
+        ref={projetcRef}
           className={styles.section6}
           data-aos="zoom-in"
           id="project"
@@ -320,6 +405,6 @@ export default function Home() {
         <br />
         <br />
       </main>
-    </>
+    </div>
   );
 }

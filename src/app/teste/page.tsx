@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
@@ -9,11 +9,15 @@ import "aos/dist/aos.css";
 import Link from "next/link";
 import Script from "next/script";
 import gsap from "gsap";
-import { useRef } from "react";
+import { useRef } from 'react';
 //var ScrollSmoother = require("gsap/dist/ScrollSmoother").ScrollSmoother;
 //import { ScrollSmoother } from 'gsap/dist/ScrollSmoother'
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { ScrollSmoother } from "gsap-trial/dist/ScrollSmoother";
+
+
+
+
 
 export default function Home() {
   const projetcRef = useRef(null);
@@ -24,21 +28,24 @@ export default function Home() {
   const tecRef = useRef(null);
   const tecPulseRef = useRef(null);
 
+
   useEffect(() => {
+
     gsap.registerPlugin(ScrollTrigger);
     //ScrollTrigger.normalizeScroll(true)
-
+   
+    
     setInterval(() => {
-      gsap.to(tecRef.current, { rotation: 360, scale: 1, x: 0, duration: 4 });
+      gsap.to(tecRef.current, {rotation: 360,scale: 1, x: 0, duration: 4});
+    
+      gsap.from(tecRef.current, {rotation: -360,scale: 1.2, x:  0, duration: 4});
+      gsap.from(tecRef.current, {rotation: -0,scale: 1, x:  0, duration: 4});
 
-      gsap.from(tecRef.current, {
-        rotation: -360,
-        scale: 1.2,
-        x: 0,
-        duration: 4,
-      });
-      gsap.from(tecRef.current, { rotation: -0, scale: 1, x: 0, duration: 4 });
-    }, 4000);
+    }, 4000)
+ 
+
+
+    
 
     AOS.init({
       duration: 1000,
@@ -47,7 +54,10 @@ export default function Home() {
     });
   }, []);
 
-  function scrol(id: string, classe: string, ref: any) {
+
+
+  function scrol(id: string, classe: string, ref: any){
+  
     // pin box-c when it reaches the center of the viewport, for 300px
     // ScrollTrigger.create({
     //   trigger: projetcRef.current,
@@ -56,11 +66,17 @@ export default function Home() {
     //   end: "+=200",
     //  // markers: true
     // });
+    
+   
   }
 
+
+
   return (
-    <div id="smooth-content">
+    <div  id="smooth-content">
       <Head>
+       
+
         <title>Rodrigo Brinate Protazio</title>
         <meta
           name="description"
@@ -78,54 +94,22 @@ export default function Home() {
         <link rel="icon" href="/profile.ico" />
       </Head>
       <main className={styles.main}>
-        <header className={styles.header}>
+        <header className={styles.header} >
           <h2>
             <Link href="/">Rodrigo Brinate Protazio</Link>
           </h2>
           <ul className={styles.headerList}>
             <li>
-              <Link
-                className="stacks"
-                onClick={() => {
-                  scrol("stacks", "stacks", stackRef);
-                }}
-                href="#staks"
-              >
-                Stacks
-              </Link>
+              <Link className="stacks" onClick={() => {scrol("stacks", "stacks", stackRef)}} href="#staks">Stacks</Link>
             </li>
             <li>
-              <Link
-                className="sobre"
-                onClick={() => {
-                  scrol("sobre", "sobre", aboutRef);
-                }}
-                href="#sobre"
-              >
-                Sobre min
-              </Link>
+              <Link className="sobre" onClick={() => {scrol("sobre", "sobre", aboutRef)}} href="#sobre">Sobre min</Link>
             </li>
             <li>
-              <Link
-                className="curriculo"
-                onClick={() => {
-                  scrol("curriculo", "curriculo", curriculoRef);
-                }}
-                href="#curriculo"
-              >
-                Currículo
-              </Link>
+              <Link className="curriculo" onClick={() => {scrol("curriculo", "curriculo", curriculoRef)}} href="#curriculo">Currículo</Link>
             </li>
             <li>
-              <Link
-                className="project"
-                onClick={() => {
-                  scrol("project", "project", projetcRef);
-                }}
-                href="#project"
-              >
-                Projetos
-              </Link>
+              <Link className="project" onClick={() => {scrol("project", "project", projetcRef)}} href="#project" >Projetos</Link>
             </li>
           </ul>
         </header>
@@ -149,7 +133,7 @@ export default function Home() {
               </Link>
               <br />
               <Link target="_blank" href="https://wa.me/5528999190355">
-                <button className="pointer">Entar em contato</button>
+                <button className="pointer" >Entar em contato</button>
               </Link>
             </div>
 
@@ -164,7 +148,7 @@ export default function Home() {
         </section>
 
         <section
-          ref={stackRef}
+        ref={stackRef}
           className={styles.section2}
           data-aos="zoom-in"
           id="stacks"
@@ -175,28 +159,14 @@ export default function Home() {
           <br />
           <ul>
             <li className="scale">
-              <Image
-                className="pulsar"
-                width={250}
-                height={200}
-                quality={100}
-                src="/html.png"
-                alt="html"
-              />
+              <Image className="pulsar" width={250} height={200} quality={100} src="/html.png" alt="html" />
               <p>
                 Concimentos e epeiências em HTML 5 para criação de sites
                 asscessíveis{" "}
               </p>
             </li>
             <li className="scale" style={{ marginTop: "-80px" }}>
-              <Image
-                className="pulsar"
-                width={200}
-                height={200}
-                quality={100}
-                src="/css.png"
-                alt="css"
-              />
+              <Image className="pulsar" width={200} height={200} quality={100} src="/css.png" alt="css" />
               <br />
               <br />
               <p style={{ marginTop: "-20px" }}>
@@ -204,15 +174,8 @@ export default function Home() {
                 animados
               </p>
             </li>
-            <li className="scale" style={{ width: "300px" }}>
-              <Image
-                className="pulsar"
-                width={220}
-                height={220}
-                quality={100}
-                src="/js.png"
-                alt="javascript"
-              />
+            <li className="scale" style={{width: "300px"}}>
+              <Image className="pulsar" width={220} height={220} quality={100} src="/js.png" alt="javascript" />
               <p>
                 Competencia na criação de sitemas e funcinalidades que facilitam
                 a vida do usuário
@@ -227,46 +190,28 @@ export default function Home() {
         >
           <ul>
             <li className="scale">
-              <Image
-                className="pulsar"
-                ref={tecRef}
-                width={230}
-                height={200}
-                quality={100}
-                src="/react.png"
-                alt="reactJs"
-              />
+              <Image className="pulsar" ref={tecRef} width={230} height={200} quality={100} src="/react.png"  alt="reactJs" />
             </li>
             <li className="scale" style={{ marginTop: "-80px" }}>
-              <Image
-                className="pulsar"
-                width={330}
-                height={280}
-                quality={100}
+              <Image className="pulsar" width={330} height={280} quality={100}
                 src="/node.png"
                 style={{
                   marginLeft: "auto",
                   marginRight: "auto",
                   display: "block",
                 }}
+               
                 alt="nodejs"
               />
             </li>
             <li className="scale">
-              <Image
-                className="pulsar"
-                width={230}
-                height={200}
-                quality={100}
-                src="/nest.png"
-                alt="nestjs"
-              />
+              <Image className="pulsar" width={230} height={200} quality={100} src="/nest.png"  alt="nestjs" />
             </li>
           </ul>
         </section>
 
         <section
-          ref={aboutRef}
+        ref={aboutRef}
           className={styles.section4}
           data-aos="zoom-in"
           id="sobre"
@@ -324,7 +269,7 @@ export default function Home() {
         <br />
         <br />
         <section
-          ref={curriculoRef}
+        ref={curriculoRef}
           className={styles.section5}
           data-aos="zoom-in"
           id="curriculo"
@@ -341,7 +286,7 @@ export default function Home() {
           </Link>
         </section>
         <section
-          ref={projetcRef}
+        ref={projetcRef}
           className={styles.section6}
           data-aos="zoom-in"
           id="project"
@@ -349,48 +294,30 @@ export default function Home() {
         >
           <h1>Projetos</h1>
 
-          <div>
-            <ul className="flex p-4">
-            <li className="p-4">
-                <img src="/oticas_mary.png" width={200} alt="" />
-                <h3 className="my-2 font-bold">Landing page Oticas mary </h3>
-                <p className="w-full text-sm mb-2">
-                  Neste projeto, desenvolvi uma landing page moderna e altamente
-                  eficaz para uma ótica, proporcionando uma presença online
-                  atraente e funcional. Através de uma abordagem centrada no
-                  usuário e um design visualmente envolvente, criei uma
-                  experiência que cativa os visitantes desde o momento em que
-                  acessam a página.
-                </p>
-                <Link target="_about" className="py-2 px-8 border border-green-600 mt-4 rounded-md"  href={"https://oticasmary.com"}>ver</Link>
-              </li>
-              <li className="p-4 hidden">
-                <img src="/oticas_mary.png" width={200} alt="" />
-                <h3 className="my-2 font-bold">Landing page Oticas mary </h3>
-                <p className="w-full text-sm mb-2">
-                  Neste projeto, desenvolvi uma landing page moderna e altamente
-                  eficaz para uma ótica, proporcionando uma presença online
-                  atraente e funcional. Através de uma abordagem centrada no
-                  usuário e um design visualmente envolvente, criei uma
-                  experiência que cativa os visitantes desde o momento em que
-                  acessam a página.
-                </p>
-                <Link className="py-2 px-8 border border-green-600 mt-4 rounded-md"  href={"https://oticasmary.com"}>ver</Link>
-              </li><li className="p-4 hidden">
-                <img src="/oticas_mary.png" width={200} alt="" />
-                <h3 className="my-2 font-bold">Landing page Oticas mary </h3>
-                <p className="w-full text-sm mb-2">
-                  Neste projeto, desenvolvi uma landing page moderna e altamente
-                  eficaz para uma ótica, proporcionando uma presença online
-                  atraente e funcional. Através de uma abordagem centrada no
-                  usuário e um design visualmente envolvente, criei uma
-                  experiência que cativa os visitantes desde o momento em que
-                  acessam a página.
-                </p>
-                <Link className="py-2 px-8 border border-green-600 mt-4 rounded-md"  href={"https://oticasmary.com"}>ver</Link>
-              </li>
-            </ul>
-          </div>
+
+         <div>
+          <ul className="flex text-gray-900 border">
+            <li>
+              <img src="" alt="" />
+                <h3>titulo </h3>
+                <p>descrição</p>
+                <Link href={""}>ver</Link>
+            </li>
+            <li>
+              <img src="" alt="" />
+                <h3>titulo </h3>
+                <p>descrição</p>
+                <Link href={""}>ver</Link>
+            </li>
+            <li>
+              <img src="" alt="" />
+                <h3>titulo </h3>
+                <p>descrição</p>
+                <Link href={""}>ver</Link>
+            </li>
+          </ul>
+          </div>       
+
 
           <p>
             <strong>Introdução</strong>
@@ -470,9 +397,9 @@ export default function Home() {
 
           <figure>
             <Image
-              width={500}
-              height={400}
-              quality={100}
+            width={500}
+            height={400}
+            quality={100}
               src="/mapa-de-area.gif"
               alt="projeto mapeamento de técnicos por cidade"
             />

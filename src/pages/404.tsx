@@ -228,7 +228,7 @@ export default function Home() {
           id="project"
           data-aos-duration="1000"
         >
-          <h1>Projetos</h1>
+          <h1 className="text-green-600">Projetos</h1>
           <p>
             <strong>Introdução</strong>
             <br />
